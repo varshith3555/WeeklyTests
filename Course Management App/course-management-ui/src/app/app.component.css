@@ -1,0 +1,51 @@
+.container {
+	max-width: 900px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.form {
+	margin: 1rem 0 1.5rem;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: 1fr 1fr 180px;
+	gap: 1rem;
+	align-items: end;
+}
+
+label {
+	display: grid;
+	gap: 0.25rem;
+}
+
+input {
+	padding: 0.5rem;
+}
+
+button {
+	padding: 0.5rem 0.75rem;
+}
+
+.error {
+	font-weight: 600;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 1px solid;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+@media (max-width: 700px) {
+	.row {
+		grid-template-columns: 1fr;
+	}
+}

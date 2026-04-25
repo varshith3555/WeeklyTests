@@ -1,0 +1,57 @@
+<main class="container">
+  <h1>Course Management</h1>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="addCourse()">
+    <div class="row">
+      <label>
+        Title
+        <input type="text" formControlName="title" />
+      </label>
+
+      <label>
+        Instructor
+        <input type="text" formControlName="instructor" />
+      </label>
+
+      <label>
+        Duration (hours)
+        <input type="number" formControlName="duration" min="1" />
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="isSaving">Add Course</button>
+  </form>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <section class="list">
+    <h2>Courses</h2>
+
+    <ng-container *ngIf="courses$ | async as courses">
+      <p *ngIf="courses.length === 0">No courses yet.</p>
+
+      <table *ngIf="courses.length > 0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th>Duration</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of courses; trackBy: trackById">
+            <td>{{ c.id }}</td>
+            <td>{{ c.title }}</td>
+            <td>{{ c.instructor }}</td>
+            <td>{{ c.duration }}</td>
+            <td>
+              <button type="button" (click)="deleteCourse(c.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </section>
+</main>

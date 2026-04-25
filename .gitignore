@@ -1,6 +1,34 @@
+# --- .NET ---
 .vs/
-bin/
-obj/
+**/bin/
+**/obj/
 
-*.csproj
-*.slnx
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# --- Node / Angular ---
+**/node_modules/
+**/dist/
+**/.angular/
+**/.cache/
+**/coverage/
+
+# Env files
+.env
+.env.*
+
+# Editor
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Excluded from this repo
+SmartShip.IdentityService/

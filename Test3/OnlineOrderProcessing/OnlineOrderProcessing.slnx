@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../PayRoll/PayRoll.csproj" />
+  <Project Path="OnlineOrderProcessing.csproj" />
+</Solution>

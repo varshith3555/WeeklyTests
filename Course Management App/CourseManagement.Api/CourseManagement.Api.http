@@ -1,0 +1,21 @@
+@CourseManagement.Api_HostAddress = http://localhost:5025
+
+GET {{CourseManagement.Api_HostAddress}}/api/courses
+Accept: application/json
+
+###
+
+POST {{CourseManagement.Api_HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+	"title": "RxJS Essentials",
+	"instructor": "Jane",
+	"duration": 8
+}
+
+###
+
+DELETE {{CourseManagement.Api_HostAddress}}/api/courses/1
+
+###
